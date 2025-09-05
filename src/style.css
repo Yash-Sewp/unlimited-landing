@@ -29,35 +29,7 @@
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 0 0 rgba(250, 69, 61, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 30px 5px rgba(250, 69, 61, 0.2);
-  }
-}
-
-@keyframes iconBounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
 
 @layer components {
   /* Brand highlight text */
@@ -87,24 +59,14 @@
   
   /* Enhanced card styles with animations */
   .card-unlimited {
-    @apply bg-white border border-gray-100 rounded-2xl shadow-lg transition-all duration-500 transform;
+    @apply bg-white border border-gray-100 rounded-2xl shadow-lg transition-all duration-300 transform;
     animation: fadeInUp 0.6s ease-out;
     
-    /* Hover effects */
+    /* Consistent hover effects for all cards */
     &:hover {
-      @apply shadow-2xl;
-      transform: translateY(-8px) scale(1.02);
-      border-color: rgba(250, 69, 61, 0.3);
-    }
-    
-    /* Floating animation for specific cards */
-    &.card-float {
-      animation: fadeInUp 0.6s ease-out, float 6s ease-in-out infinite 1s;
-    }
-    
-    /* Glow effect for important cards */
-    &.card-glow:hover {
-      animation: pulse-glow 2s infinite;
+      @apply shadow-xl;
+      transform: translateY(-4px);
+      border-color: rgba(250, 69, 61, 0.2);
     }
     
     /* Icon container animation */
@@ -112,7 +74,7 @@
       @apply transition-all duration-300;
       
       &:hover {
-        animation: iconBounce 0.6s ease-in-out;
+        transform: scale(1.05);
       }
     }
     
@@ -122,7 +84,7 @@
     }
     
     &:hover .card-content {
-      transform: translateY(-2px);
+      transform: translateY(-1px);
     }
   }
   
@@ -133,21 +95,6 @@
   .card-unlimited:nth-child(4) { animation-delay: 0.3s; }
   .card-unlimited:nth-child(5) { animation-delay: 0.4s; }
   .card-unlimited:nth-child(6) { animation-delay: 0.5s; }
-  
-  /* Special effects for numbered cards */
-  .card-numbered {
-    @apply relative overflow-hidden;
-    
-    &::before {
-      content: '';
-      @apply absolute inset-0 opacity-0 transition-opacity duration-300;
-      background: linear-gradient(135deg, rgba(250, 69, 61, 0.1) 0%, rgba(250, 69, 61, 0.05) 100%);
-    }
-    
-    &:hover::before {
-      @apply opacity-100;
-    }
-  }
   
   /* Section text */
   .section-text {
@@ -177,10 +124,5 @@
       @apply scale-110;
       filter: drop-shadow(0 4px 8px rgba(250, 69, 61, 0.3));
     }
-  }
-  
-  /* Gradient hover effect for card backgrounds */
-  .card-gradient:hover {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(250, 69, 61, 0.02) 100%);
   }
 }
