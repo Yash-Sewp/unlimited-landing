@@ -9,6 +9,6 @@ export default defineConfig({
     port: 3000,
   },
   preview: {
-    allowedHosts: ['python-html-generator.onrender.com'],
+    allowedHosts: ['unlimited-landing.onrender.com'],
   },
 })
