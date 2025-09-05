@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* The Unlimited Brand Styles */
+@layer base {
+  :root {
+    --unlimited-primary: #FA453D;
+    --unlimited-orange: #FA453D;
+    --unlimited-red: #FA453D;
+    --unlimited-dark: #1D3557;
+    --unlimited-navy: #1A365D;
+    --unlimited-light: #F7FAFC;
+    --unlimited-gray: #718096;
+    --unlimited-accent: #FF6B35;
+    --unlimited-hover: #FB6A64;
+  }
+}
+
+@layer components {
+  /* Brand highlight text */
+  .highlight {
+    @apply text-unlimited-primary font-semibold;
+  }
+  
+  /* Section headings */
+  .section-heading {
+    @apply font-heading font-bold text-unlimited-dark leading-tight;
+  }
+  
+  /* Banner heading style */
+  .banner-heading {
+    @apply font-heading font-black text-white uppercase tracking-tight leading-none;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+  
+  /* Button styles */
+  .btn-unlimited {
+    @apply bg-unlimited-primary hover:bg-unlimited-hover text-white font-semibold px-6 py-3 rounded-sm transition-colors duration-200;
+  }
+  
+  .btn-unlimited-outline {
+    @apply border-2 border-unlimited-primary text-unlimited-primary hover:bg-unlimited-hover hover:text-white font-semibold px-6 py-3 rounded-sm transition-all duration-200;
+  }
+  
+  /* Card styles */
+  .card-unlimited {
+    @apply bg-white border border-gray-100 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300;
+  }
+  
+  /* Section text */
+  .section-text {
+    @apply text-unlimited-gray leading-relaxed;
+  }
+  
+  /* Container styles */
+  .container-unlimited {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Navbar styles */
+  .navbar-unlimited {
+    @apply bg-white border-b-2 border-unlimited-primary shadow-sm;
+  }
+  
+  /* Footer styles */
+  .footer-unlimited {
+    @apply bg-unlimited-dark text-white;
+  }
+}
